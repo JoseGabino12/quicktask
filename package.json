@@ -1,0 +1,15 @@
+{
+  "name": "quicktask",
+  "version": "1.0.0",
+  "description": "QuickTask: La forma más rápida y sencilla de gestionar tus tareas y proyectos",
+  "scripts": {
+    "dev": "concurrently 'cd backend && python3 main.py' 'cd frontend && pnpm run dev'",
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "keywords": [],
+  "author": "gabinomorales",
+  "license": "ISC",
+  "devDependencies": {
+    "concurrently": "^8.2.2"
+  }
+}
