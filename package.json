@@ -4,6 +4,7 @@
   "description": "QuickTask: La forma más rápida y sencilla de gestionar tus tareas y proyectos",
   "scripts": {
     "dev": "concurrently 'cd backend && python3 main.py' 'cd frontend && pnpm run dev'",
+    "install": "cd frontend && pnpm install && cd ..",
     "test": "echo \"Error: no test specified\" && exit 1"
   },
   "keywords": [],
