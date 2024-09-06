@@ -1,0 +1,28 @@
+version: '3.8'
+
+services:
+  backend:
+    build: ./backend
+    container_name: quicktask-backend
+    ports:
+      - "5001:5001"
+    volumes:
+      - ./backend:/app
+    environment:
+      FLASK_ENV: development
+
+  frontend:
+    build: ./frontend
+    container_name: quicktask-frontend
+    ports:
+      - "5173:5173"
+    volumes:
+      - ./frontend:/app
+      - node_modules:/app/node_modules # Usa un volumen para node_modules
+    environment:
+      NODE_ENV: development
+    depends_on:
+      - backend
+
+volumes:
+  node_modules:

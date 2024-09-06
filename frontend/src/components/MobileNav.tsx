@@ -1,16 +1,16 @@
-import { 
-  Box, 
-  Collapse, 
-  Icon, 
-  Stack, 
-  Text, 
+import {
+  Box,
+  Collapse,
+  Icon,
+  Stack,
+  Text,
   useColorMode,
   useDisclosure
 } from '@chakra-ui/react'
 
 import { ChevronDownIcon } from '@chakra-ui/icons'
-import { NavItem } from '../../interface/intrefaces'
-import { NAV_ITEMS } from '../../data/data'
+import { NavItem } from '../interface/intrefaces'
+import { NAV_ITEMS } from '../data/data'
 
 
 const MobileNavItem = ({ label, children, href }: NavItem) => {
@@ -66,7 +66,7 @@ const MobileNav = () => {
   const { colorMode } = useColorMode()
 
   return (
-    <Stack bg={ colorMode === 'light' ? 'white' : 'gray.800' }p={ 4 } display={ { md: 'none' } }>
+    <Stack bg={ colorMode === 'light' ? 'white' : 'gray.800' } p={ 4 } display={ { md: 'none' } }>
       { NAV_ITEMS.map((navItem) => (
         <MobileNavItem key={ navItem.label } { ...navItem } />
       )) }

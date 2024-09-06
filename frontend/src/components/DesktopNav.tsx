@@ -10,8 +10,8 @@ import {
   Icon
 } from '@chakra-ui/react'
 
-import { NAV_ITEMS } from '../../data/data'
-import { type NavItem } from '../../interface/intrefaces'
+import { NAV_ITEMS } from '../data/data'
+import { type NavItem } from '../interface/intrefaces'
 
 import { ChevronRightIcon } from '@chakra-ui/icons'
 

@@ -1,21 +1,21 @@
 import { BrowserRouter as Router, Route, Routes } from 'react-router-dom';
-import WithSubnavigation from './components/navbar/Nav';
+import Nav from './components/Nav';
 
 import { Toaster } from 'sonner'
 
 import routes from './routes/route';
 import './App.css';
 
-function App() {
+function App () {
   return (
     <Router>
-      <WithSubnavigation />
+      <Nav />
       <Routes>
         { routes.map(({ path, Component }) => (
           <Route key={ path } path={ path } element={ <Component /> } />
         )) }
       </Routes>
-      <Toaster position="top-right" richColors />
+      <Toaster position="bottom-right" richColors />
     </Router>
   )
 }

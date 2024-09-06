@@ -14,9 +14,9 @@ import {
   Textarea,
 } from '@chakra-ui/react'
 
-import { useForm } from '../../hooks/useForm'
+import { useForm } from '../../../hooks/useForm'
 
-import { ModalProps } from '../../interface/intrefaces'
+import { ModalProps } from '../../../interface/intrefaces'
 import { useState } from 'react'
 
 const CreateTableModal = ({ isOpen, onClose, createTable }: ModalProps) => {
@@ -57,14 +57,14 @@ const CreateTableModal = ({ isOpen, onClose, createTable }: ModalProps) => {
         <ModalContent>
           <ModalHeader>Crear una nueva tabla</ModalHeader>
           <ModalCloseButton />
-          <ModalBody display='flex' flexDirection='column' gap={6}>
+          <ModalBody display='flex' flexDirection='column' gap={ 6 }>
             <FormControl isRequired isInvalid={ error.nombre }>
               <FormLabel htmlFor='nombre'>Nombre de la tabla</FormLabel>
               <Input
                 id='nombre'
                 type='text'
                 name='nombre'
-                placeholder='Ejemplo: Tareas de la semana' 
+                placeholder='Ejemplo: Proyecto de tesis'
                 value={ formState.nombre as string }
                 onChange={ onInputChange }
               />
@@ -76,10 +76,10 @@ const CreateTableModal = ({ isOpen, onClose, createTable }: ModalProps) => {
               <Textarea
                 id='descripcion'
                 name='descripcion'
-                placeholder='Añade una breve descripción de la tabla' 
+                placeholder='Añade una breve descripción de la tabla'
                 value={ formState.descripcion as string }
                 onChange={ onInputChange }
-                />
+              />
               <FormErrorMessage>Este campo es requerido</FormErrorMessage>
 
             </FormControl>

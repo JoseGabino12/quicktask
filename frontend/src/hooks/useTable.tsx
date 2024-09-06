@@ -1,12 +1,12 @@
 import { useState, useEffect } from "react"
 import { toast } from "sonner"
-import { type Table } from "../interface/intrefaces"
+import type { CreateTable, Table } from "../interface/intrefaces"
 
 export const useTable = () => {
   const [tables, setTables] = useState<Table[]>([])
-  const [loading, setLoading] = useState<boolean>(false)
+  const [loading, setLoading] = useState(true)
 
-  const createTable = async (table: Table) => {
+  const createTable = async (table: CreateTable) => {
     setLoading(true)
     const options = {
       method: 'POST',
@@ -44,17 +44,19 @@ export const useTable = () => {
       toast.error('Error en la solicitud, por favor revisa tus datos e inténtalo de nuevo.')
     }
     setLoading(false)
-  
+
   }
 
   useEffect(() => {
     fetch(`${import.meta.env.VITE_API_URL}/api/tables`)
       .then(response => response.json())
       .then(data => setTables(data))
+      .finally(() => setLoading(false))
   }, [])
 
   return {
     tables,
+    setTables,
     loading,
     createTable,
     deleteTable

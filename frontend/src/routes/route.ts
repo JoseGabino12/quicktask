@@ -1,5 +1,6 @@
-import Home from "../components/home/Home"
-import Tables from "../components/tables/Tables"
+import Home from '../views/home/Home'
+import Tables from '../views/tables/Tables'
+import Table from '../views/tables/Table'
 
 const routes = [
   {
@@ -11,6 +12,11 @@ const routes = [
     name: 'tables',
     path: '/tables',
     Component: Tables
+  },
+  {
+    name: 'table',
+    path: '/table/:id',
+    Component: Table
   }
 ]
 
